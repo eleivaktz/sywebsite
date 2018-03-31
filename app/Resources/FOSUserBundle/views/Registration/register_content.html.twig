@@ -1,0 +1,59 @@
+<div id="wrapper">
+	{% trans_default_domain 'FOSUserBundle' %}
+
+	{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}    		
+		{{ form_start(form) }}
+			<div class="cform-group">
+				<div class="form-row">
+					<div class="col-lg-6">					
+		    			{{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder' : form.username.vars.label }}) }}
+		    		</div>
+		    		<div class="col-lg-6">					
+		    			{{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder' :  form.email.vars.label }}) }}
+		    		</div>
+		    	</div>	    	
+	    	</div>
+	    	<div class="cform-group">
+		    	<div class="form-row">	    		
+		    		<div class="col-lg-4">			    		
+			    		<div class="row">
+				    		<div class="col-1"><div class="steam-icon"></div></div>
+				    		<div class="col-11">
+				    			{{ form_widget(form.steam, {'attr': {'class': 'form-control', 'placeholder' :  form.steam.vars.label }}) }}
+				    		</div>			 
+			    		</div>
+			    	</div>
+		    		<div class="col-lg-4">			    		
+		    			<div class="row">
+				    		<div class="col-1"><div class="twitch-icon"></div></div>
+				    		<div class="col-11">
+				    			{{ form_widget(form.twitch, {'attr': {'class': 'form-control', 'placeholder' : form.twitch.vars.label }}) }}
+				    		</div>			 
+			    		</div>   		
+			    	</div>
+		    		<div class="col-lg-4">
+		    			<div class="row">
+				    		<div class="col-1"><div class="facebook-icon"></div></div>
+				    		<div class="col-11">
+				    			{{ form_widget(form.facebook, {'attr': {'class': 'form-control', 'placeholder' : form.facebook.vars.label }}) }}
+				    		</div>			 
+			    		</div>			    		
+			    	</div>
+		    	</div>
+		    </div>
+		    <div class="cform-group">
+			    <div class="form-row">		    	
+			    	<div class="col-lg-6">
+			    		{{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder' : form.plainPassword.first.vars.label }}) }}
+			    	</div>
+			    	<div class="col-lg-6">
+			    		{{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder' : form.plainPassword.second.vars.label }}) }}
+			    	</div>
+		    	</div>
+	    	</div>
+		    <div>
+		        <input class="btn btn-success btn-block" type="submit" value="{{ 'registration.submit'|trans }}" />
+		    </div>
+	    {{ form_end(form) }}	
+	{{ form_end(form) }}
+</div>

@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+{% block scripts %}
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="{{ asset('assets/twitchpannel.js') }}"></script>
+    <script src="{{ asset('assets/app.js') }}"></script>
+{% endblock %}
+{% block body %}
+    <div id="wrapper">
+            <div class="twitch-container">
+                <div class="twitch-close-botton">
+                    <div class="arrow-right"></div>
+                 </div>
+                 <div id="twitch-embed"></div>                 
+            </div>
+        <div id="web-container">
+            <h1>Programacion del mes</h1>
+                
+            <div class="daycard-row-container">
+                <div class="row">
+                 <div class="col daycard" data-toggle="collapse" data-target="#demo" id="lunes">
+                   <h3 class="dia">Lunes</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>                
+                 </div>
+                 <div class="col daycard" id="martes" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Martes</h3>
+                   <h3 class="horario" >17:30 - 21:00 aprox</h3> 
+                 </div>
+                 <div class="col daycard" id="miercoles" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Miercoles</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>
+                 </div>
+                 <div class="col daycard" id="jueves" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Jueves</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>
+                 </div>    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col daycard" id="viernes" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Viernes</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>
+                </div>
+                <div class="col daycard" id="sabado" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Sabado</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>
+                </div>
+                <div class="col daycard" id="domingo" data-toggle="collapse" data-target="#demo">
+                   <h3 class="dia">Domingo</h3>
+                   <h3 class="horario">17:30 - 21:00 aprox</h3>
+                </div>
+            </div>            
+            <div id="demo" class="collapse game_collapse">
+                <div class="game_container">
+                    <div class="row portrait_container">   
+                        <div class="col-4"></div>                     
+                        <div class="col-4 game_portrait" id="game_portrait"></div>                        
+                    </div>
+                    <div id="game_info"></div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "maiden116"
+      });
+    </script>    
+{% endblock %}

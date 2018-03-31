@@ -1,0 +1,75 @@
+{% extends 'layout.html.twig' %}
+{% block scripts %} 
+    <script src="{{ asset('assets/app.js') }}"></script>   
+{% endblock %}
+{% block body %}
+    <div id="wrapper">
+        <div id="web-container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row align-items-end">
+                        <div class="col-6">
+                            <form class="w-75" name="game_form" id="add_game_form">
+                                <h1>El juego que queres ver no esta en la lista? Añadilo!!</h1>
+
+                                <div class="form-group padding-0-5">                                   
+                                   <input type="text" class="form-control" name="game_name" id="game_name"  placeholder="Nombre del Juego">                                   
+                                </div>
+                                <p id="error_add_game"></p>                                
+                                <input class="btn btn-success btn-lg btn-block"type="submit" name="game_save" id="game_save" value="Agregar">
+                            </form>
+                        </div>
+                        <div class="col-3">                            
+                        </div>
+                        <div class="col-3">                            
+                            <input type="text" id="game_filter" name="game_filter" placeholder="Filtro de juegos">
+                        </div>
+                    </div>
+                    <div class="row gamelist_container">
+                        <div class="col-12">
+                            <p id="error_vote_game"></p>
+                            <div id="gamelist">
+                                {% for game in gamelist %}
+                                    <div class="row game-item" id="{{game.id}}">
+                                        <div class="col-6"><p class="game-name">{{game.name}}</p></div>
+                                        <div class="col-6">
+                                            <div class="row">
+                                                <div id="categories-container-{{game.id}}" class="col-8 padding-4x">                                                    
+                                                    <div class="row">
+                                                        <div class="col-10">
+                                                            {% for category in game.categoriesArray|first %}
+                                                                <span class="badge badge-pill badge-info">{{category.description}}</span>
+                                                            {% endfor %}                                                    
+                                                        </div>
+                                                        <div class="col-2">
+                                                            {% if game.steamlink %}
+                                                                <a href="http://store.steampowered.com/app/{{game.steamlink}}" target="_blank"><div class="steamlink{{ game.steamlink ? '': ' disable' }}"></div></a>
+                                                            {% else %}
+                                                                <div class="steamlink{{ game.steamlink ? '': ' disable' }}"></div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1">
+                                                </div>
+                                                <div clas="col-3" style="padding:4px;">
+                                                    <button class="btn btn-primary" name="{{game.id}}" id="votar{{game.id}}" >Votar</button>
+                                                </div>
+                                            </div>
+                                        </div>                            
+                                    </div>
+                                {% endfor %}  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2"></div>
+                <div class="col-xl-4">
+                    <div class="chart">
+                        <canvas id="myChart"></canvas>                
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

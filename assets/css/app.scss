@@ -1,0 +1,345 @@
+
+$brand-primary: darken(#428bca, 20%);
+@import '~bootstrap/scss/bootstrap';
+
+
+
+body{
+	margin:0;
+	font-family: 'Mina', sans-serif;
+	background:black;	
+}
+
+@media screen and (max-width: 1920px) {
+    #wrapper {
+        min-height: 680px;
+    }
+}
+
+#myChart{
+    border: 1px solid white;
+    border-radius: 5px;
+    width:500px;
+    height:500px;
+}
+
+.nav-small{
+	height:30px;
+}
+
+.button-logout{
+	height: 20px;
+    font-size: small;
+    padding: 0px 2px;
+}
+
+.login-text{
+	padding: 0;
+    margin: 5px 0 0 0;
+    display: inline-block;
+    color: #0fff0f;
+}
+
+.cform-group{
+	margin: 20px 0;
+    overflow: hidden;
+}
+
+.fos_user_content
+{
+	padding:20px;
+	background:black;
+}
+
+.header{
+	background-image: url("images/topbanner.png");
+	width: 100%;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -10px -130px;
+    position: relative;
+}
+
+.loginpannel{
+	position: absolute;
+    right: 0;
+    z-index: 1000;
+    margin: 10px 20px;
+}
+
+#wrapper{
+	padding: 10px;
+    background-color: black;
+    border-right: solid 1px white;
+    border-left: solid 1px white;
+    margin: 0 10px 0 10px;
+    overflow: hidden;
+    width: 99%;
+    position: relative;
+
+	#web-container{
+		width: 100%;    	
+    	overflow: hidden;
+    	background-color: #101010;
+    	border: 1px solid #292828;
+    	position: relative;
+    	display: inline-block;
+    	padding: 20px;
+
+    	.daycard-row-container
+    	{
+    		margin-bottom:20px;
+    	}
+
+    	.daycard{
+			    height: 200px;
+			    background-size: cover;
+			    border-radius: 5px;
+			    border: 1px solid white;
+			    margin: 0 20px;
+			    padding: 0px;
+
+			h3.dia{
+    			    color: #40d225;
+				    margin: 0;
+				    text-shadow: 0 0 3px #1b1b1b, 0 0 3px #000000;
+				    background-color: rgba(0, 0, 0, 0.9);
+				    padding: 0px 10px;
+				    border-radius: 5px;
+				    display: inline-block;			
+    		}
+
+    		h3.horario{
+    			    position: absolute;
+				    bottom: 0px;
+				    color: #40d225;
+				    margin: 0px 10px;
+				    text-shadow: 0 0 3px #1b1b1b, 0 0 3px #000000;
+				    background-color: rgba(0, 0, 0, 0.9);
+				    padding: 0 10px;
+				    border-radius: 5px;			
+    		}
+    	}
+
+    	.game_container{
+    		background-color: #000000; 
+            color:white;
+
+            .portrait_container{
+                padding:20px
+            }  		
+
+    		.game_portrait{
+    			border: 6px double #eae7e7;
+                display: inline-block;
+                height: 245px;
+                background-repeat: no-repeat;
+                background-size: cover;  
+                border-radius: 5px; 			
+    		}
+
+            #game_info{
+                padding: 20px;
+            }
+    	}
+	}
+}
+.cnav{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: black;
+    //width: 100%;
+    height: 36px;
+    border-bottom: #252525 1px solid;
+
+        .nav-opt{
+    		display: inline-block;
+    		width: 22%;
+    		background-color: grey;
+    		margin: 8px 4px;
+    		border: 2px solid aliceblue;
+		}
+}
+
+h1{
+	color: #adadad;
+    margin: 20px;
+}
+
+
+
+
+.twitch-container{	
+    border: 2px solid #544f4f;
+    border-radius: 4px;
+    position: absolute;
+    width: 878px;   
+    right: 0;
+    z-index: 100;
+
+	#twitch-embed{
+		float:right;
+	}
+	.twitch-close-botton{
+		width: 20px;
+	    height: 480;
+	    background-color: grey;
+	    float: left;
+	    position: relative;
+	    box-sizing: unset;
+
+		.arrow-right {
+		    width: 0;
+		    height: 0;
+		    border-top: 14px solid #f7f7f700;
+		    border-bottom: 14px solid transparent;
+		    border-left: 14px solid #0e0e0e;
+		    margin: 0 5px;
+		    position: absolute;
+		    top: 50%;
+		}
+	}
+}
+
+#add_game_form{
+	width: 30%;
+    color: grey;
+    border: 1px solid white;
+    margin: 20px 68px;
+    background-color: black;
+
+    h1{
+    	color: #adadad;
+    	margin: 20px;
+    	text-align: center;
+    	font-size: 18px;
+    	margin-bottom: 5px;
+    }
+
+    #error_add_game{
+    	margin: 0px;
+    	font-size: 14px;
+    	color: red;
+    	text-align: center;
+    }
+
+    label{
+    	margin: 0px 20px;
+    }
+
+    input[type="text"] {
+    	background-color: #9e9e9e;
+    	color: black;
+    }
+}
+
+.chart{	
+	right:0px; 
+	width:500px; 
+	height:500px;
+	background-color:#000000;
+}
+
+
+
+.gamelist_container{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 500px;
+
+	#error_vote_game{
+		margin: 0px;
+    	font-size: 14px;
+    	color: red;
+    	text-align: center;
+    	width: 30%;
+	}
+}
+
+.game-item{
+	background: grey;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.game-name{
+	margin: 10px;
+    font-size: larger;
+    color: #ececec;
+}
+
+.steamlink{
+	background-image: url("images/steam_logo.png");
+    width: 40px;   
+	height: 40px;
+	background-size: 40px;
+	float: right;
+
+	&.disable{
+		opacity:0.5;
+	}
+}
+
+.padding-4x
+{
+	padding: 4px 0;
+}
+
+.padding-0-5
+{
+	padding: 0px 5px;
+}
+
+.steam-icon{
+	background-image: url("images/steam-icon.png");
+    display: inline-block;
+    background-size: cover;
+    width:40px;
+    height:40px;
+}
+
+.facebook-icon{
+	background-image: url("images/facebook-icon.png");
+    display: inline-block;
+    background-size: cover;
+    width:40px;
+    height:40px;
+}
+
+.twitch-icon{
+	background-image: url("images/twitch-icon.png");
+    display: inline-block;
+    background-size: cover;
+    width:40px;
+    height:40px;
+}
+
+.game_collapse{
+    margin: 20px 0px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b30000; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #9a1717; 
+}
