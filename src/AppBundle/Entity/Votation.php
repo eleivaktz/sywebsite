@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Schudlevotation")
+ * @ORM\Table(name="votations")
  
  */
 class Votation 
@@ -72,7 +72,7 @@ class Votation
      */
     public function getPool()
     {
-        return $this->Pool;
+        return $this->pool;
     }
 
     /**

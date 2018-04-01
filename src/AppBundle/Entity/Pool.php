@@ -19,9 +19,18 @@ class Pool
     protected $id;  
 
     /**     
-     * @ORM\OneToMany(targetEntity="votation", mappedBy="pool")
+     * @ORM\OneToMany(targetEntity="Votation", mappedBy="pool")
      */
     private $votations;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $name;
+    /**
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : false})
+     */
+    private $enable;
 
 
     public function getId()
@@ -41,25 +50,57 @@ class Pool
         return $this;
     }
 
-    
+    public function getVotations()
+    {
+        return $this->votations;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return self
+     */
+    public function setVotations($votations)
+    {
+        $this->votations = $votations;
+
+        return $this;
+    }
 
     /**
      * @return mixed
      */
-    public function getSchudle()
+    public function getName()
     {
-        return $this->schudle;
+        return $this->name;
     }
 
     /**
-     * @param mixed $schudle
-     *
-     * @return self
+     * @param mixed $name
      */
-    public function setSchudle($schudle)
+    public function setName($name)
     {
-        $this->schudle = $schudle;
+        $this->name = $name;
+    }
 
-        return $this;
+    /**
+     * @return mixed
+     */
+    public function getEnable()
+    {
+        return $this->enable;
+    }
+
+    /**
+     * @param mixed $enable
+     */
+    public function setEnable($enable)
+    {
+        $this->enable = $enable;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

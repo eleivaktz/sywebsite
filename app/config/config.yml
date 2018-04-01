@@ -82,10 +82,10 @@ easy_admin:
             list:                                        
                 actions:
                     - { name: 'game_getinfo', type: 'route' }
-        Schudlepool:        
-            class: AppBundle\Entity\Schudlepool
-        Schudlevotation:        
-            class: AppBundle\Entity\Schudlevotation
+        Pool:
+            class: AppBundle\Entity\Pool
+        Votation:
+            class: AppBundle\Entity\Votation
         Schudlegameday:        
             class: AppBundle\Entity\Schudlegameday
             form:
