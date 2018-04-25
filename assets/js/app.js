@@ -27,12 +27,13 @@ $(document).ready(function() {
                     {
                         if(data.hasOwnProperty("response") && data.response === "success")
 	                    {
-	                    	var schudlepoolupdate = JSON.parse(data.schudlepoolupdate);
+	                    	var poolsupdate = JSON.parse(data.poolsupdate);
+	                    	console.log(poolsupdate);
 	                    	var arraylabels = [];
 						    var arrayvotes = [];
-						    $(schudlepoolupdate).each(function(key,value){
-						    	arraylabels.push(value.game.name);	
-						    	arrayvotes.push(value.votes);
+						    $(poolsupdate).each(function(key,value){
+						    	//arraylabels.push(value.game.name);
+						    	//arrayvotes.push(value.votes);
 						    });
 
 					    	var ctx = document.getElementById("myChart").getContext("2d");

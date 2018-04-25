@@ -40,10 +40,15 @@ class Votation
      * @ORM\ManyToMany(targetEntity="User")
      * @ORM\JoinTable(name="users_votation",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="votation_id", referencedColumnName="id", unique=true)}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="votation_id", referencedColumnName="id")}
      *      )
      */
     private $voters;
+
+    public function __toString()
+    {
+        return (string)$this->votes;
+    }
 
     /**
      * @return mixed
