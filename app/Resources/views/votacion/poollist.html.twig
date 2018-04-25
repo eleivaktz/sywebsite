@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% block scripts %}
+    <script src="{{ asset('assets/app.js') }}"></script>
+{% endblock %}
+{% block body %}
+    <div id="wrapper">
+        <div id="web-container">
+            <div class="row">
+                {% for pool in pools %}
+                <div class="col-12">
+                    {{ pool.name }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
